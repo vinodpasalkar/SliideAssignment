@@ -10,10 +10,13 @@ import java.util.Map;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {"src/test/resources/features"},
-        glue = {"utils", "stepdefinations"},
-        tags = "@file_delivery",
-        plugin = {"pretty", "html:target/index.html", "json:target/reports/cucumber.json"},
-        monochrome = true
+        glue = {"stepDefinitions", "/src/test/java/test/java/news/stepDefinitions"},
+        tags = "@Login",
+        plugin = { "pretty", "json:target/cucumber-reports/Cucumber.json",
+                "junit:target/cucumber-reports/Cucumber.xml",
+                "html:target/cucumber-reports"},
+        monochrome = true,
+        publish = true
 )
 public class TestRunner {
     public static Map<String, String> config;

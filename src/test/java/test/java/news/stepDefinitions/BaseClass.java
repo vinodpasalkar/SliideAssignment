@@ -73,7 +73,7 @@ public class BaseClass {
 
     // wait for element to be present on screen
     protected static void waitForElementToBeAvailable(By locator) {
-        new WebDriverWait(appiumDriver, 10).until(ExpectedConditions.presenceOfElementLocated(locator));
+        new WebDriverWait(appiumDriver, 20).until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
     // make internet connection active

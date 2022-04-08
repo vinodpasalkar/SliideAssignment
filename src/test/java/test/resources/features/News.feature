@@ -1,4 +1,4 @@
-@News @Regression
+@news @Regression
 Feature: As a user I want to see my news
 
   Background:

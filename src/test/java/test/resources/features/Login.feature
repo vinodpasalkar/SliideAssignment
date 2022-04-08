@@ -1,4 +1,4 @@
-@Login @Regression
+@login @Regression
 Feature: As a user I want to log in to the app
 
   Background:

@@ -19,6 +19,45 @@ dependencies {
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-alpha-1'
 }
 
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+task cucumber() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty','--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features']
+        }
+    }
+}
+
+task login() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features', '--tags', '@login']
+        }
+    }
+}
+
+task news() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features', '--tags', '@news']
+        }
+    }
+}
+
 test {
-    useJUnitPlatform()
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
 }
