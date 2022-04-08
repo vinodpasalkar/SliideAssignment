@@ -9,14 +9,13 @@ import java.util.Map;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resources/features"},
-        glue = {"stepDefinitions", "/src/test/java/test/java/news/stepDefinitions"},
+        features = {"/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features"},
+        glue = {"test.java.news.stepDefinitions"},
         tags = "@Login",
-        plugin = { "pretty", "json:target/cucumber-reports/Cucumber.json",
-                "junit:target/cucumber-reports/Cucumber.xml",
-                "html:target/cucumber-reports"},
+        plugin = { "pretty", "json:target/cucumber.json"},
         monochrome = true,
-        publish = true
+        publish = true,
+        stepNotifications = true
 )
 public class TestRunner {
     public static Map<String, String> config;
