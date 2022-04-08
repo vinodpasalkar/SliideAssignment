@@ -34,7 +34,7 @@ task cucumber() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty','--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features']
+            args = ['--plugin', 'pretty','--plugin', 'json:target/cucumber.json','--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features']
         }
     }
 }
@@ -45,7 +45,7 @@ task login() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty', '--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features', '--tags', '@Smoke']
+            args = ['--plugin', 'pretty','--plugin', 'json:target/cucumber.json', '--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features', '--tags', '@Smoke']
         }
     }
 }
@@ -56,7 +56,7 @@ task news() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty', '--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features', '--tags', '@news']
+            args = ['--plugin', 'pretty','--plugin', 'json:target/cucumber.json', '--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features', '--tags', '@news']
         }
     }
 }

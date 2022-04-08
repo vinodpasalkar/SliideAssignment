@@ -55,4 +55,8 @@ adb shell svc data disable
 
 
 #### Reporting ✅
+Login feature : https://reports.cucumber.io/reports/a48ee865-6bb8-42d3-a5b8-8b2de22979d3 ( This link might expire as these reports self destruct in a day)
+![Report](Login_Feature_Report.jpg)
 
+News feature : https://reports.cucumber.io/reports/6c293506-3823-40c6-aa36-c47f40e36302 ( This link might expire as these reports self destruct in a day)
+![Report](News_Feature_Report.jpg)
