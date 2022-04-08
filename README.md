@@ -4,11 +4,7 @@ Created using Java, Appium and Cucumber BDD framework for News mobile applicatio
 
 
 #### Prerequisite for this project
-Should have Java 11.X, gradle 6.X, appium 1.22.0 
-Android SDK
-adb
-gradle
-gradlew
+Should have Java 11.X, gradle 6.X, appium 1.22.0, Android SDK, adb
 
 
 
