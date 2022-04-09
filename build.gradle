@@ -45,7 +45,7 @@ task login() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty','--plugin', 'json:target/cucumber.json', '--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features', '--tags', '@Smoke']
+            args = ['--plugin', 'pretty','--plugin', 'json:target/cucumber.json', '--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features', '--tags', '@login']
         }
     }
 }
@@ -57,6 +57,28 @@ task news() {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = ['--plugin', 'pretty','--plugin', 'json:target/cucumber.json', '--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features', '--tags', '@news']
+        }
+    }
+}
+
+task smoke() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty','--plugin', 'json:target/cucumber.json', '--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features', '--tags', '@Smoke']
+        }
+    }
+}
+
+task regression() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty','--plugin', 'json:target/cucumber.json', '--glue', 'test.java.news.stepDefinitions', '/Users/vinodpasalkar/IdeaProjects/SliideAssignment/src/test/java/test/resources/features', '--tags', '@Regression']
         }
     }
 }
